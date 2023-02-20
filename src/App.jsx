@@ -37,7 +37,7 @@ function App() {
       });
   }, []);
 
-  if (!pokemonData) {
+  if (!pokemonData && !PokemonList) {
     return <div>Cargando...</div>;
   }
 
