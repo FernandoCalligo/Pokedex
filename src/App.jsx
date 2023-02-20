@@ -7,14 +7,6 @@ function App() {
   const [PokemonList, setPokemonList] = useState([])
   const [Shiny, setShiny] = useState(false)
 
-  const prevPoke = () => { 
-    if (pokemonId != 1) {
-      setPokemonId(pokemonId - 1)
-    } else {
-      return
-    }
-  }
-
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
       .then(response => response.json())
@@ -37,7 +29,7 @@ function App() {
       });
   }, []);
 
-  if (!pokemonData && !PokemonList) {
+  if (!pokemonData) {
     return <div>Cargando...</div>;
   }
 
