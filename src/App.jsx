@@ -24,7 +24,9 @@ function App() {
       .catch(error => {
         console.log(error);
       });
+  }, [pokemonId]);
 
+  useEffect(() => {
       fetch(`https://pokeapi.co/api/v2/pokemon/?limit=150`)
       .then(response => response.json())
       .then(data => {
@@ -33,7 +35,7 @@ function App() {
       .catch(error => {
         console.log(error);
       });
-  }, [pokemonId]);
+  }, []);
 
   if (!pokemonData) {
     return <div>Cargando...</div>;
